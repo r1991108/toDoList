@@ -70,6 +70,12 @@ add.addEventListener("click", (e) => {
         }
       });
       todoItem.remove(); // todoItemを削除するイベントをanimationが終わった後にするよう設定
+      let myList = localStorage.getItem("list");
+      if (myList === "[]") {
+        console.log("listがなくなった");
+        let sortButton = document.querySelector(".sort button");
+        sortButton.innerText = "Todoリストがない";
+      }
     });
     todoItem.style.animation = "scaleDown 0.3s forwards";
   });
@@ -105,6 +111,9 @@ add.addEventListener("click", (e) => {
     form.children[i].value = "";
   }
 
+  let sortButton = document.querySelector(".sort button");
+  sortButton.innerText = "日付でソート";
+
   //   console.log(todoText + " " + todoMonth + " " + todoDate);
 });
 
@@ -113,7 +122,7 @@ loadData();
 // localStorageからデータをロードする関数
 function loadData() {
   let myList = localStorage.getItem("list");
-  if (myList !== null) {
+  if (myList !== "[]") {
     let myListArray = JSON.parse(myList);
     myListArray.forEach((item) => {
       //todoを作成
@@ -164,6 +173,10 @@ function loadData() {
 
       section.appendChild(todo);
     });
+  } else {
+    let sortButton = document.querySelector(".sort button");
+    console.log("listが存在しない");
+    sortButton.innerText = "まだ何もない";
   }
 }
 

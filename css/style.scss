@@ -1,0 +1,195 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+// iタグのイベントを削除（チェックボタン、ゴミ箱ボタンを押すときに、iタグに影響されないように）
+i {
+  pointer-events: none;
+}
+body {
+  height: 100vh;
+  background: linear-gradient(45deg, rgb(179, 100, 93), rgb(123, 100, 255));
+}
+header {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+  }
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input,
+  button {
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.75rem;
+    margin: 0.1rem;
+    transition: all 0.1s ease;
+  }
+  input[type="number"] {
+    width: 50px;
+    text-align: center;
+  }
+
+  //上下矢印を隠す設定
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+    /* Firefox */
+  }
+
+  //ボタン見た目設計
+  button {
+    cursor: pointer;
+    background-color: rgb(30, 13, 49);
+    color: white;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div.todo {
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.25rem 0;
+    transition: all 0.1s ease;
+    p {
+      background-color: white;
+      color: black;
+      padding: 0.25rem 0.5rem;
+      font-size: 1.75rem;
+    }
+    p.todo-text {
+      width: 50%;
+    }
+    p.todo-time {
+      width: 20%;
+      text-align: center;
+    }
+
+    button {
+      padding: 0.25rem 0.5rem;
+      font-size: 1.75rem;
+      border: none;
+      cursor: pointer;
+      color: white;
+    }
+    button.complete {
+      background-color: rgb(118, 213, 118);
+    }
+    button.trash {
+      background-color: rgb(250, 116, 116);
+    }
+  }
+}
+
+div.sort {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.75rem;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(30, 13, 49);
+    color: white;
+  }
+}
+
+.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.2rem;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
+  to {
+    transform: scale(0);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  header {
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      color: rgb(255, 255, 255);
+      font-size: 3rem;
+    }
+  }
+  form {
+    input,
+    button {
+      border: none;
+      padding: 0.3rem 0.2rem;
+      font-size: 1rem;
+      //   margin: 0.1rem;
+    }
+    input[type="number"] {
+      width: 2rem;
+      text-align: center;
+    }
+
+    //ボタン見た目設計
+    button {
+      cursor: pointer;
+      background-color: rgb(30, 13, 49);
+      color: white;
+    }
+  }
+  section {
+    div.todo {
+      min-width: 90vw;
+
+      margin: 0.5rem 0;
+
+      p.todo-text {
+        font-size: 1rem;
+        width: 15rem;
+      }
+      p.todo-time {
+        width: 5rem;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      button {
+        font-size: 1rem;
+      }
+    }
+  }
+  div.sort {
+    button {
+      font-size: 1rem;
+    }
+  }
+}

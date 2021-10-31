@@ -1,0 +1,35 @@
+section {
+  width: 80vw;
+  height: 100vh;
+  background-color: blue;
+}
+
+div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div p.p1 {
+  width: 50vw;
+  background-color: green;
+  height: 50px;
+}
+
+div p.p2 {
+  width: 20vw;
+  background-color: yellowgreen;
+  height: 50px;
+}
+
+div div {
+  background-color: black;
+  width: 100px;
+  height: 50px;
+}
+/*# sourceMappingURL=try.css.map */

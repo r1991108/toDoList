@@ -110,6 +110,7 @@ section div.todo p {
   color: black;
   padding: 0.25rem 0.5rem;
   font-size: 1.75rem;
+  margin-right: 0.3rem;
 }
 
 section div.todo p.todo-text {
@@ -127,6 +128,7 @@ section div.todo button {
   border: none;
   cursor: pointer;
   color: white;
+  margin-right: 0.3rem;
 }
 
 section div.todo button.complete {

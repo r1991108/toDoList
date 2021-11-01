@@ -13,17 +13,40 @@ add.addEventListener("click", (e) => {
   {
     let isAnyInvalid = false;
     for (let i = 0; i < form.children.length - 1; i++) {
+      form.children[i].style.backgroundColor = "";
+      form.children[i].style.border = "";
       console.log(form.children[i].value);
       if (form.children[i].value === "") {
         console.log(`No. ${i} is invalid"`);
         form.children[i].style.backgroundColor = "rgb(255, 218, 219)";
         form.children[i].style.border = "2px solid red";
         isAnyInvalid = true;
+        //月不正チェック
       } else {
         form.children[i].style.backgroundColor = "";
         form.children[i].style.border = "";
       }
     }
+
+    // 日付不正チェック
+    let limitInMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    // 月の不正チェック
+    if (form.children[1].value > 12 || form.children[1].value < 1) {
+      console.log(`input month is invalid"`);
+      form.children[1].style.backgroundColor = "rgb(255, 218, 219)";
+      form.children[1].style.border = "2px solid red";
+      isAnyInvalid = true;
+      // 日の不正チェック
+    } else if (
+      form.children[2].value > limitInMonth[form.children[1].value - 1] ||
+      form.children[2].value < 1
+    ) {
+      console.log(`input date is invalid"`);
+      form.children[2].style.backgroundColor = "rgb(255, 218, 219)";
+      form.children[2].style.border = "2px solid red";
+      isAnyInvalid = true;
+    }
+
     if (isAnyInvalid) {
       return;
     }

@@ -62,11 +62,21 @@ add.addEventListener("click", (e) => {
   // text展開用
   text.addEventListener("click", (e) => {
     // console.log("onclick");
-    todo.style.flexWrap = "wrap";
-    text.style.width = "90vw";
-    text.style.maxWidth = "90vw";
-    text.style.overflow = "visible";
-    text.style.overflowWrap = "break-word";
+    if (text.style.width === "90vw") {
+      todo.style.flexWrap = "";
+      text.style.width = "";
+      text.style.maxWidth = "";
+      text.style.overflow = "";
+      text.style.overflowWrap = "";
+      text.style.whiteSpace = "";
+    } else {
+      todo.style.flexWrap = "wrap";
+      text.style.width = "90vw";
+      text.style.maxWidth = "90vw";
+      text.style.overflow = "visible";
+      text.style.overflowWrap = "break-word";
+      text.style.whiteSpace = "break-spaces";
+    }
   });
 
   let time = document.createElement("p");
@@ -181,7 +191,7 @@ function loadData() {
           text.style.maxWidth = "90vw";
           text.style.overflow = "visible";
           text.style.overflowWrap = "break-word";
-          text.style.whiteSpace = "nowrap";
+          text.style.whiteSpace = "break-spaces";
         }
       });
       let time = document.createElement("p");

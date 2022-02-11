@@ -83,6 +83,7 @@ section {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      margin-bottom: 0.5rem;
     }
     div.todo-text:hover {
       cursor: pointer;
@@ -94,6 +95,7 @@ section {
       background-color: white;
       width: 8rem;
       text-align: center;
+      margin-bottom: 0.5rem;
     }
 
     button {
@@ -103,6 +105,7 @@ section {
       cursor: pointer;
       color: white;
       margin-right: 0.3rem;
+      margin-bottom: 0.5rem;
     }
     button.complete {
       background-color: rgb(118, 213, 118);
@@ -193,6 +196,7 @@ div.sort {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        margin-bottom: 0.2rem;
       }
       div.todo-text:hover {
         cursor: pointer;
@@ -201,10 +205,12 @@ div.sort {
         width: 4rem;
         font-size: 1rem;
         text-align: center;
+        margin-bottom: 0.2rem;
       }
 
       button {
         font-size: 1rem;
+        margin-bottom: 0.2rem;
       }
     }
   }

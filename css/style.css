@@ -120,6 +120,7 @@ section div.todo div.todo-text {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-bottom: 0.5rem;
 }
 
 section div.todo div.todo-text:hover {
@@ -133,6 +134,7 @@ section div.todo p.todo-time {
   background-color: white;
   width: 8rem;
   text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 section div.todo button {
@@ -142,6 +144,7 @@ section div.todo button {
   cursor: pointer;
   color: white;
   margin-right: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 section div.todo button.complete {
@@ -259,6 +262,7 @@ div.sort button {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    margin-bottom: 0.2rem;
   }
   section div.todo div.todo-text:hover {
     cursor: pointer;
@@ -267,9 +271,11 @@ div.sort button {
     width: 4rem;
     font-size: 1rem;
     text-align: center;
+    margin-bottom: 0.2rem;
   }
   section div.todo button {
     font-size: 1rem;
+    margin-bottom: 0.2rem;
   }
   div.sort button {
     font-size: 1rem;
